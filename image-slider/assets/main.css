@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+}
+.title {
+  margin: 40px auto 10px;
+  width: 40vw;
+  height: 50px;
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  font-size: 30px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.slides-container {
+  margin: 100px auto 0;
+  width: 600px;
+  height: 358px;
+  position: relative;
+}
+.slides-container i:first-of-type {
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  font-size: 28px;
+  font-weight: bold;
+  color: black;
+}
+.slides-container i#leftbtn.disabled,
+.slides-container i#rightbtn.disabled {
+  cursor: no-drop;
+  color: gray;
+}
+
+.slides-container i:last-of-type {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  font-size: 28px;
+  font-weight: bold;
+  color: black;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-color: #eee;
+  border-style: solid;
+  border-width: 25px;
+}
+
+.slide > img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.slide > img.active {
+  opacity: 1;
+}
+.pagination-container {
+  margin: 0 auto;
+  width: 600px;
+  background-color: #eee;
+}
+
+.pagination-container > ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.pagination-container > ul > li {
+  background-color: #ddd;
+  color: black;
+  font-size: 18px;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 2px;
+}
+.pagination-container > ul > li.active {
+  background-color: #226dff;
+  color: white;
+}
+
+@media (max-width: 992px) {
+  .title {
+    width: 60%;
+  }
+  .slides-container,
+  .pagination-container {
+    width: 500px;
+  }
+}
+
+@media (max-width: 657px) {
+  .title {
+    width: 80%;
+  }
+  .slides-container,
+  .pagination-container {
+    width: 350px;
+  }
+}
